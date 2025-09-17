@@ -57,6 +57,7 @@ def predict_sample(audio, original_sr, run_name, target_sr, eval_overlap, segmen
     if original_sr != target_sr:
         audio = torchaudio.transforms.Resample(original_sr, target_sr)(audio)
     audio_model = get_model_by_run_name(run_name=run_name, num_classes=11).to(device)
+    audio_model.eval()
     window_len = int(segment_duration * target_sr)
     step_size = int(window_len - (eval_overlap * target_sr))
     segments = []

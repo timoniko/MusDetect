@@ -1,0 +1,10 @@
+datasets/NSynth_dataset
+datasets/IRMAS_dataset
+demo_app/checkpoints
+wandb
+flagged
+.idea
+.venv
+__pycache__
+*.pyc
+

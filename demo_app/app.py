@@ -80,12 +80,12 @@ def predict_sample(audio, original_sr, run_name, target_sr, eval_overlap, segmen
 
 
 def create_interface(threshold=0.25):
-    test_folder = os.path.join(os.getcwd(), 'demo_examples')
+    demo_folder = os.path.join(f'{os.getcwd()}/demo_app/demo_examples')
     interface = gr.Interface(
         fn=gradio_pred,
         inputs=gr.Audio(),
         outputs=gr.Label(label=f'Confidence for 11 instruments. Threshold: {int(threshold * 100)}%'),
-        examples=[os.path.join(test_folder, sample) for sample in os.listdir(test_folder)]
+        examples=[os.path.join(demo_folder, sample) for sample in os.listdir(demo_folder)]
     )
     return interface
 

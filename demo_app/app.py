@@ -27,10 +27,7 @@ def pad_segment(window_len, segment):
 
 
 def get_model_by_run_name(run_name, num_classes):
-    if os.getcwd().endswith('musdetect'):
-        run_path = os.path.join(os.getcwd(), 'demo_app', 'checkpoints', run_name)
-    else:
-        run_path = os.path.join('checkpoints', run_name)
+    run_path = os.path.join(os.getcwd(), 'demo_app', 'checkpoints', run_name)
     checkpoint_path = os.path.join(run_path, os.listdir(run_path)[0])
     if checkpoint_path.split('/')[-1].startswith('passt'):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

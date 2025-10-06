@@ -1,5 +1,5 @@
 
-# Multilabel Instrument Classification with PaSST
+# Multilabel Instrument Classification with Transformers
 
 This small project aims at predicting 11 musical instruments from IRMAS dataset. This dataset is quite challenging due to its small size and polyphonic nature. Moreover, each sample from test set may have more than one annotated instrument, while excerpts from training data are annotated with one label - a predominant instrument. Highly efficient audio spectogram transformer [PaSST](https://github.com/kkoutini/PaSST) pretrained on AudioSet is used an audio encoder for fine-tuning. Overall, best performing configuration achieves competitive performance, with just a couple of minutes of training on a GPU. 
 [Sacred](https://github.com/IDSIA/sacred) is used for configuring an experiment, and [Weights and Biases](https://wandb.ai/site/experiment-tracking/) is used for logging and experiment tracking.
